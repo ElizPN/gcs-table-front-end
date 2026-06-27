@@ -3,7 +3,10 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
-  overflow: hidden;
+  /* Horizontal scroll on narrow screens so the date column stays reachable.
+     Vertical hidden keeps rounded corners clean. */
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .table {
@@ -42,6 +45,7 @@
 .mono {
   font-family: var(--font-mono);
   color: var(--color-text);
+  white-space: nowrap;
 }
 
 .muted {
@@ -95,5 +99,20 @@
 @media (max-width: 767px) {
   .colDelta {
     display: none;
+  }
+
+  /* Tighten everything so id + name + status + createdOn fit ~375px. */
+  .table {
+    font-size: 13px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px 4px;
+  }
+
+  /* Date column gets a smaller font so the full string still fits. */
+  .mono {
+    font-size: 11px;
   }
 }

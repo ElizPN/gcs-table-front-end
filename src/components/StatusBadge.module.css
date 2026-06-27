@@ -9,6 +9,13 @@
   white-space: nowrap;
 }
 
+@media (max-width: 767px) {
+  .badge {
+    padding: 1px 5px;
+    font-size: 10px;
+  }
+}
+
 .completed {
   background: var(--status-completed-bg);
   color: var(--status-completed-fg);
