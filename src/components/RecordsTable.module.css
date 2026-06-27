@@ -1,0 +1,99 @@
+.wrapper {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table thead th {
+  background: var(--color-surface);
+  font-weight: 600;
+  color: var(--color-muted);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: var(--color-row-hover);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  color: var(--color-text);
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+.sortButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+.sortButton:hover {
+  color: var(--color-accent);
+}
+
+.sortActive {
+  color: var(--color-accent);
+}
+
+.sortArrow {
+  font-size: 10px;
+  line-height: 1;
+}
+
+.messageRow td {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--color-muted);
+}
+
+.errorRow td {
+  color: var(--status-error-fg);
+}
+
+/* Responsive — hide low-priority columns at narrow widths */
+@media (max-width: 1023px) {
+  .colDescription {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .colDelta {
+    display: none;
+  }
+}

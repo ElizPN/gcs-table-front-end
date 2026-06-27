@@ -1,0 +1,30 @@
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.completed {
+  background: var(--status-completed-bg);
+  color: var(--status-completed-fg);
+}
+
+.canceled {
+  background: var(--status-canceled-bg);
+  color: var(--status-canceled-fg);
+}
+
+.error {
+  background: var(--status-error-bg);
+  color: var(--status-error-fg);
+}
+
+.unknown {
+  background: var(--status-unknown-bg);
+  color: var(--status-unknown-fg);
+}

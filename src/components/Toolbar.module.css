@@ -1,0 +1,55 @@
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.searchWrap {
+  flex: 1;
+  min-width: 240px;
+}
+
+.searchInput,
+.statusSelect {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.searchInput:focus,
+.statusSelect:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.statusWrap {
+  min-width: 180px;
+}
+
+/* Mobile — stack vertically, full-width controls.
+   16px input font prevents iOS Safari from zooming on focus. */
+@media (max-width: 767px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchInput,
+  .statusSelect {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+
+  .searchWrap,
+  .statusWrap {
+    width: 100%;
+  }
+}
