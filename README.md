@@ -39,7 +39,7 @@ CI=true npm test            # single run, CI mode
 
 ## What it does
 
-- **Search** by `name` (debounced 500ms)
+- **Search** by `name` (debounced 700ms)
 - **Filter** by `status` (`COMPLETED` / `CANCELED` / `ERROR` / `UNKNOWN`)
 - **Sort** by `id`, `name`, or `createdOn` (click the column header; click again to flip direction)
 - **Paginate** 20 rows per page
@@ -75,8 +75,8 @@ The spec calls out load times and bundle size. We added **zero dependencies** be
 
 Two complementary mechanisms protect against wasteful and unsafe network behavior:
 
-- **Debounce (500ms)** keeps the search box from firing a fetch on every keystroke. *Frequency control.*
-- **AbortController** cancels the previous in-flight request whenever the query changes, so stale responses can never paint over fresh data. *Order control.*
+- **Debounce (700ms)** keeps the search box from firing a fetch on every keystroke. _Frequency control._
+- **AbortController** cancels the previous in-flight request whenever the query changes, so stale responses can never paint over fresh data. _Order control._
 
 The `AbortError` from a cancelled request is silently ignored — we caused it on purpose, so it's not a real failure. Only genuine failures (network down, 500 from server, JSON parse) make it to the error state.
 
